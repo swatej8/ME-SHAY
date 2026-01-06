@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import SchemesTicker from "@/components/home/SchemesTicker";
+import Navbar from "@/components/ui/Navbar";
 
 export default function Home() {
   const [started, setStarted] = useState(false);
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans">
       <SchemesTicker />
+      <Navbar />
       <main className="relative min-h-[110vh] flex flex-col items-center justify-start pt-32 overflow-hidden">
         {/* 3D Background */}
         <div className="absolute inset-0 z-0 h-screen">
@@ -30,20 +32,7 @@ export default function Home() {
 
         <div className="z-10 w-full max-w-5xl mx-auto relative px-4">
           {/* Navbar */}
-          <nav className="absolute -top-20 left-0 w-full flex justify-between items-center py-6">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-[var(--color-brand)] rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/30">M</div>
-              <span className="font-bold text-2xl tracking-tight text-gray-900">ME Sahay</span>
-            </div>
-            <div className="flex gap-4">
-              <Link href="/login">
-                <Button variant="ghost" className="hidden md:flex text-gray-600 hover:text-[var(--color-brand)] hover:bg-orange-50">Login</Button>
-              </Link>
-              <Link href="/signup">
-                <Button className="hidden md:flex bg-[var(--color-brand)] hover:bg-[var(--color-brand-dark)] text-white">Sign Up</Button>
-              </Link>
-            </div>
-          </nav>
+
 
           {!started ? (
             <motion.div
