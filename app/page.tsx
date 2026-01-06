@@ -19,9 +19,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
-      <SchemesTicker />
-      <Navbar />
-      <main className="relative min-h-[110vh] flex flex-col items-center justify-start pt-32 overflow-hidden">
+      {/* Ticker and Navbar are handled globally or specifically here? 
+          Wait, user wants sticky navbar globally. We put Navbar in page.tsx previously. 
+          To fix "Continuous line in middle", we should ensure flow is: Ticker -> Navbar -> Hero.
+      */}
+      <div className="relative z-50">
+        <SchemesTicker />
+        <Navbar />
+      </div>
+      <main className="relative min-h-[110vh] flex flex-col items-center justify-start pt-10 overflow-hidden">
         {/* 3D Background */}
         <div className="absolute inset-0 z-0 h-screen">
           <HeroScene />
