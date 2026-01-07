@@ -17,8 +17,6 @@ export const metadata: Metadata = {
   description: "Find the right MP Government scheme for your business in 60 seconds.",
 };
 
-import Preloader from "@/components/ui/Preloader";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +27,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Preloader />
         {children}
       </body>
     </html>
